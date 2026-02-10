@@ -31,7 +31,7 @@ export default function Projects() {
           badge={["Java"]}
         />
 
-         <ProjCard
+        <ProjCard
           image={"/beedget.png"}
           title={"Beedget"}
           year={"2025"}
@@ -43,7 +43,7 @@ export default function Projects() {
       </div>
 
       {/* UI UX PROJ */}
-      <div  className="mt-24">
+      <div className="mt-24">
         <div>
           <h1 className="text-8xl bg-gradient-to-r from-[#57C785] to-[#372A9B] bg-clip-text text-transparent  font-bold flex items-center justify-center">
             UI UX
@@ -57,6 +57,18 @@ export default function Projects() {
             year={"2025"}
             subtitle={
               "[PASSION PROJECT] Redesigned landing and order pages of Burger King. No commercial use intended."
+            }
+            badge={["Figma"]}
+          />
+        </div>
+
+            <div className="flex flex-col items-center justify-center p-5">
+          <UIUXCard
+            image={"/chishore.png"}
+            title={"Chishore"}
+            year={"2026"}
+            subtitle={
+              "[PASSION PROJECT] Designed a landing page for my own personal brand. No commercial use intended for the resources used."
             }
             badge={["Figma"]}
           />
