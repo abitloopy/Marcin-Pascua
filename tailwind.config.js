@@ -5,11 +5,18 @@ export default {
   theme: {
   	extend: {
   		fontFamily: {
-  			poppins: [
-  				'Poppins',
-  				'sans-serif'
-  			]
+  			poppins: ['Poppins', 'sans-serif'],
+  			sans: ['Poppins', 'sans-serif']
   		},
+      keyframes: {
+        scroll: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        }
+      },
+      animation: {
+        scroll: 'scroll 40s linear infinite',
+      },
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
