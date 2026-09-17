@@ -52,7 +52,7 @@ export default function Achievements() {
       {/* Header matching inspiration layout (centered) */}
       <div className="flex flex-col items-center text-center mb-10 px-4 md:px-0">
         <span className="text-[#637C50] font-bold text-xs md:text-sm tracking-widest uppercase mb-3 md:mb-4">Behind the Scenes</span>
-        <h1 className="text-[34px] leading-[1.15] sm:text-5xl md:text-6xl lg:text-7xl text-gray-900 font-extrabold mb-4 md:mb-6 max-w-3xl">
+        <h1 className="text-[34px] leading-[1.15] sm:text-5xl md:text-4xl lg:text-5xl text-gray-900 font-extrabold mb-4 md:mb-6 max-w-3xl">
           Curious What Else I've Achieved?
         </h1>
         <p className="text-gray-500 font-medium text-[15px] md:text-lg mb-8 max-w-xl">
@@ -170,12 +170,30 @@ export default function Achievements() {
               className="relative z-10 w-full max-w-[1000px] bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row font-poppins max-h-[90vh]"
             >
               {/* Image side */}
-              <div className="relative w-full md:w-3/5 bg-black flex flex-col justify-center items-center">
-                <img 
-                  src={selectedAchievement.image} 
-                  alt={selectedAchievement.title} 
-                  className="w-full h-auto max-h-[50vh] md:max-h-full object-contain" 
-                />
+              <div className="relative w-full md:w-3/5 bg-black flex flex-col justify-center items-center group">
+                {selectedAchievement.pdf ? (
+                  <a href={selectedAchievement.pdf} target="_blank" rel="noopener noreferrer" className="w-full h-full flex justify-center items-center relative cursor-pointer">
+                    <img 
+                      src={selectedAchievement.image} 
+                      alt={selectedAchievement.title} 
+                      className="w-full h-auto max-h-[50vh] md:max-h-full object-contain group-hover:opacity-80 transition-opacity duration-300" 
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                      <div className="bg-black/60 text-white px-4 py-2 rounded-full flex items-center gap-2 backdrop-blur-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                        </svg>
+                        <span className="font-medium">Click to open PDF</span>
+                      </div>
+                    </div>
+                  </a>
+                ) : (
+                  <img 
+                    src={selectedAchievement.image} 
+                    alt={selectedAchievement.title} 
+                    className="w-full h-auto max-h-[50vh] md:max-h-full object-contain" 
+                  />
+                )}
                 
                 {/* Close Button Mobile */}
                 <button 
@@ -220,6 +238,22 @@ export default function Achievements() {
                     <p className="text-gray-600 text-base leading-relaxed">
                       {selectedAchievement.description}
                     </p>
+                  )}
+                  
+                  {selectedAchievement.pdf && (
+                    <div className="mt-6">
+                      <a 
+                        href={selectedAchievement.pdf} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 bg-[#637C50] text-white px-6 py-3 rounded-xl font-bold hover:bg-[#A1C680] transition-colors shadow-md hover:shadow-lg hover:-translate-y-0.5 duration-300"
+                      >
+                        View Full Certificate
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                        </svg>
+                      </a>
+                    </div>
                   )}
                 </div>
               </div>

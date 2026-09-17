@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const certificates = [
-  "/cert1.png",
-  "/cert2.png",
-  "/cert3.png",
-  "/cert4.png",
-  "/cert5.png",
+  { image: "/topcit.png", pdf: "/topcit-cert.pdf", starred: true },
+  { image: "/cert1.png" },
+  { image: "/cert2.png" },
+  { image: "/cert3.png" },
+  { image: "/cert4.png" },
+  { image: "/cert5.png" }
 ];
 
 export default function CertificatesOverview() {
@@ -56,7 +57,7 @@ export default function CertificatesOverview() {
   return (
     <div className="pt-0 pb-20 w-full overflow-hidden bg-white flex flex-col items-center justify-center font-poppins relative">
       <div className="flex flex-col items-center text-center mb-10 px-4 md:px-0 mt-6">
-        <h2 className="text-[34px] leading-[1.15] sm:text-5xl md:text-6xl lg:text-7xl text-gray-900 font-extrabold mb-4 md:mb-6 max-w-3xl">
+        <h2 className="text-[34px] leading-[1.15] sm:text-5xl md:text-3xl lg:text-5xl text-gray-900 font-extrabold mb-4 md:mb-6 max-w-3xl">
           My Certifications
         </h2>
         <p className="text-gray-500 font-medium text-[15px] md:text-lg max-w-xl mx-auto mb-8">
@@ -104,14 +105,29 @@ export default function CertificatesOverview() {
           ref={scrollRef}
           className="flex gap-6 md:gap-8 overflow-x-auto items-center py-8 px-12 md:px-24 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         >
-          {scrollItems.map((cert, index) => (
+          {scrollItems.map((cert, index) => {
+            const certImage = cert.image || cert;
+            const certPdf = cert.pdf || null;
+            
+            return (
             <div 
               key={index} 
-              onClick={() => setSelectedCert(cert)}
-              className="w-[280px] md:w-[350px] h-[200px] md:h-[245px] flex-shrink-0 bg-gray-50 rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-lg hover:scale-105 hover:-translate-y-1 cursor-pointer relative group/card"
+              onClick={() => {
+                if (certPdf) {
+                  window.open(certPdf, '_blank');
+                } else {
+                  setSelectedCert(certImage);
+                }
+              }}
+              className={`w-[280px] md:w-[350px] h-[200px] md:h-[245px] flex-shrink-0 bg-gray-50 rounded-2xl shadow-sm border ${cert.starred ? 'border-yellow-400 ring-2 ring-yellow-400/20' : 'border-gray-100'} overflow-hidden transition-all duration-300 hover:shadow-lg hover:scale-105 hover:-translate-y-1 cursor-pointer relative group/card`}
             >
+              {cert.starred && (
+                <div className="absolute top-4 right-4 bg-gradient-to-br from-yellow-300 to-yellow-500 text-white w-9 h-9 rounded-full flex items-center justify-center shadow-md z-10" title="Featured">
+                  <i className="fa-solid fa-star text-sm drop-shadow-sm"></i>
+                </div>
+              )}
               <img 
-                src={cert} 
+                src={certImage} 
                 alt={`Certificate ${index + 1}`} 
                 className="w-full h-full object-contain p-4" 
               />
@@ -119,11 +135,15 @@ export default function CertificatesOverview() {
               {/* Hover overlay hint */}
               <div className="absolute inset-0 bg-black/0 group-hover/card:bg-black/10 transition-colors duration-300 flex items-center justify-center">
                 <div className="bg-white/90 text-gray-800 px-4 py-2 rounded-full opacity-0 group-hover/card:opacity-100 transform translate-y-4 group-hover/card:translate-y-0 transition-all duration-300 font-semibold text-sm flex items-center gap-2 shadow-sm">
-                  <i className="fa-solid fa-magnifying-glass"></i> View
+                  {certPdf ? (
+                    <><i className="fa-solid fa-file-pdf"></i> Open PDF</>
+                  ) : (
+                    <><i className="fa-solid fa-magnifying-glass"></i> View</>
+                  )}
                 </div>
               </div>
             </div>
-          ))}
+          )})}
         </div>
       </div>
 

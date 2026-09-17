@@ -5,8 +5,8 @@ export default function Education() {
   return (
     <div id="education" className="education w-full mx-auto max-w-7xl mt-6 lg:mt-0 px-2 sm:px-4 pb-20">
       <div className="flex flex-col items-center w-full">
-        <div className="flex justify-start mb-10 w-full px-4">
-          <h1 className="text-3xl md:text-4xl font-bold text-[#637C50] font-poppins text-left tracking-wide">
+        <div className="flex justify-center md:justify-start mb-10 w-full px-4">
+          <h1 className="text-3xl md:text-4xl font-bold text-[#637C50] font-poppins text-center md:text-left tracking-wide">
             Education
           </h1>
         </div>

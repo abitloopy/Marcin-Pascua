@@ -18,7 +18,9 @@ export default function Header() {
         {/* Right: Resume Button (Desktop) & Hamburger (Mobile) */}
         <div className="flex items-center gap-1.5 md:gap-2">
           <a
-            href="#"
+            href="/Marcin_Pascua_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex bg-[#637C50] text-white px-3.5 py-1.5 md:px-6 md:py-2.5 rounded-full font-bold hover:bg-[#A1C680] hover:text-white hover:-translate-y-0.5 transition-all duration-300 items-center gap-1.5 md:gap-2 shadow-sm text-[13px] md:text-base shrink-0 mr-0.5 md:mr-1"
           >
             Resume <i className="fa-solid fa-download text-[11px] md:text-sm"></i>

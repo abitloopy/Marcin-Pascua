@@ -28,7 +28,7 @@ const projectsData = [
     image: "/saligra.png",
     title: "Saligra",
     year: "2026",
-    subtitle: "An MCP-Powered borrower reliability system",
+    subtitle: "An advanced Model Context Protocol (MCP) powered borrower reliability system designed to evaluate creditworthiness through intelligent risk-scoring.",
     badge: ["React", "Tailwind CSS", "MCP Server (Tools)", "Express (Client)", "TypeScript", "Node.js"]
   },
   {
@@ -42,7 +42,7 @@ const projectsData = [
     image: "/chew.png",
     title: "Chew!",
     year: "2026",
-    subtitle: "[UI/UX] An AI-Powered Smart Meal Planner Application",
+    subtitle: "[UI/UX] A comprehensive design case study for an AI-powered smart meal planner, featuring personalized recipe recommendations and intuitive user flows.",
     badge: ["Figma"]
   },
   {
@@ -51,6 +51,13 @@ const projectsData = [
     year: "2026",
     subtitle: "[UI/UX] An IoT-enabled smart waste management system that provides real-time monitoring of waste-bin levels and conditions to support timely collection and more efficient waste management.",
     badge: ["Figma"]
+  },
+  {
+    image: "/scholaria.png",
+    title: "Scholaria",
+    year: "2026",
+    subtitle: "A system for recommending scholarship to a student based on the students eligibility.",
+    badge: ["React", "Supabase", "Tailwind CSS"]
   }
 ].sort((a, b) => parseInt(b.year) - parseInt(a.year));
 
@@ -83,7 +90,7 @@ export default function Projects() {
   const currentProject = projectsData[currentIndex];
 
   return (
-    <div id="projects" className="overflow-hidden pt-28 md:pt-36 pb-10 bg-white font-poppins">
+    <div id="projects" className="overflow-hidden pt-28 md:pt-36 pb-0 bg-white font-poppins">
       <div className="max-w-7xl mx-auto px-4 w-full">
         {/* Intro Heading & Subheading */}
         <div className="flex flex-col items-center text-center mb-16 mt-4">

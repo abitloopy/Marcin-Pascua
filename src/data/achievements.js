@@ -5,7 +5,7 @@ export const achievementsData = [
     title: "10th ICT Congress: General Information Quiz Bowl",
     award: "2nd Place",
     year: "2023-2024",
-    description: "Had a great time testing my IT knowledge! Managed to snag 2nd place in this awesome general info quiz bowl."
+    description: "My first competition in college! Had a great time testing my IT knowledge and managed to snag 2nd place in this awesome general info quiz bowl."
   },
   {
     logo: "/ccs.png",
@@ -29,7 +29,7 @@ export const achievementsData = [
     title: "UCLM CCS Days: UI/UX Competition",
     award: "2nd Place",
     year: "2025-2026",
-    description: "Really enjoyed flexing my design muscles here. Crafted a clean, user-friendly interface that earned 2nd place."
+    description: "Yay! Team Figmeyms. Really enjoyed flexing our ui/ux design of our Chew! application, a smart meal planner app. We Crafted a clean, user-friendly interface that earned 2nd place."
   },
   {
     logo: "/ccs.png",

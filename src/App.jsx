@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import ProjectsPage from "./pages/ProjectsPage";
 import AchievementsPage from "./pages/AchievementsPage";
+import ResumePage from "./pages/ResumePage";
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/achievements" element={<AchievementsPage />} />
+          <Route path="/resume" element={<ResumePage />} />
         </Routes>
         <Footer />
       </Layout>

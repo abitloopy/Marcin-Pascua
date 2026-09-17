@@ -21,8 +21,8 @@ export default function Skills() {
   return (
     <div id="skills" className="w-full font-poppins px-4 relative pb-10">
       <hr className="w-full border-t-2 border-gray-100 max-w-6xl mx-auto mb-10" />
-      <div className="flex justify-start w-full mb-10 mt-6 max-w-5xl mx-auto">
-        <h1 className="text-3xl md:text-4xl font-bold text-[#637C50] text-left tracking-wide">
+      <div className="flex justify-center md:justify-start w-full mb-10 mt-6 max-w-5xl mx-auto">
+        <h1 className="text-3xl md:text-4xl font-bold text-[#637C50] text-center md:text-left tracking-wide">
           Skills
         </h1>
       </div>

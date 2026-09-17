@@ -181,24 +181,36 @@ export default function AchievementsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
             {[
-              "/cert1.png",
-              "/cert2.png",
-              "/cert3.png",
-              "/cert4.png",
-              "/cert5.png"
-            ].map((cert, index) => (
+              { image: "/topcit.png", pdf: "/topcit-cert.pdf", starred: true },
+              { image: "/cert1.png" },
+              { image: "/cert2.png" },
+              { image: "/cert3.png" },
+              { image: "/cert4.png" },
+              { image: "/cert5.png" }
+            ].map((cert, index) => {
+              const certImage = cert.image || cert;
+              const certPdf = cert.pdf || null;
+              return (
               <div 
                 key={index} 
-                onClick={() => setSelectedImage(cert)}
-                className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 aspect-[4/3] flex items-center justify-center overflow-hidden group cursor-pointer"
+                onClick={() => {
+                  if (certPdf) window.open(certPdf, '_blank');
+                  else setSelectedImage(certImage);
+                }}
+                className={`relative bg-white rounded-2xl p-4 shadow-sm border ${cert.starred ? 'border-yellow-400 ring-2 ring-yellow-400/20 bg-yellow-50/10' : 'border-gray-100'} hover:shadow-xl transition-all duration-300 hover:-translate-y-1 aspect-[4/3] flex items-center justify-center overflow-hidden group cursor-pointer`}
               >
+                {cert.starred && (
+                  <div className="absolute top-3 right-3 bg-gradient-to-br from-yellow-300 to-yellow-500 text-white w-8 h-8 rounded-full flex items-center justify-center shadow-md z-10" title="Featured">
+                    <i className="fa-solid fa-star text-sm drop-shadow-sm"></i>
+                  </div>
+                )}
                 <img 
-                  src={cert} 
+                  src={certImage} 
                   alt={`Certificate ${index + 1}`} 
                   className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-[1.02]" 
                 />
               </div>
-            ))}
+            )})}
           </div>
         </div>
       </div>

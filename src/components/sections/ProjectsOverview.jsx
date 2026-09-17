@@ -32,7 +32,7 @@ export default function ProjectsOverview() {
                image={"/saligra.png"}
                title={"Saligra"}
                year={"2026"}
-               subtitle={"An MCP-Powered borrower reliability system"}
+               subtitle={"An advanced MCP-powered borrower reliability and risk-scoring system."}
                badge={["React", "Tailwind CSS", "MCP Server"]}
                useModal={true}
              />
@@ -56,7 +56,7 @@ export default function ProjectsOverview() {
                image={"/chew.png"}
                title={"Chew!"}
                year={"2026"}
-               subtitle={"[UI/UX] An AI-Powered Smart Meal Planner Application"}
+               subtitle={"[UI/UX] A comprehensive design case study for an AI-powered smart meal planner application."}
                badge={["Figma"]}
                useModal={true}
              />
