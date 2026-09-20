@@ -9,12 +9,12 @@ export default function About() {
       <div className="min-h-screen pt-24 px-4 pb-20">
         <SlideUpComponent>
           <div className="w-full max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-20 mt-12 mb-20 px-4">
-            
+
             {/* Left side: Picture */}
             <div className="flex-1 flex justify-center items-center p-4 mt-6 md:mt-0">
-              <img 
-                src="/marcin-formal-pic.jpg" 
-                alt="Marcin Formal" 
+              <img
+                src="/marcin-formal-pic.jpg"
+                alt="Marcin Formal"
                 className="w-full max-w-[250px] sm:max-w-[280px] md:max-w-[350px] object-cover rounded-xl shadow-md"
               />
             </div>
@@ -30,9 +30,9 @@ export default function About() {
                   <i className="fa-solid fa-award"></i> Level 3 TOPCIT Passer
                 </span>
               </div>
-              
+
               <p className="text-[16px] md:text-[18px] leading-relaxed text-gray-700 mb-8 font-medium">
-                I'm an Information Technology student at the University of Cebu – Lapu-Lapu and Mandaue, currently building my skills in full-stack web development and UI/UX design. As I continue my journey in technology, I'm learning how to develop functional, responsive, and user-centered web applications—from designing interfaces and creating engaging user experiences to developing the front-end and back-end systems that bring those ideas to life.
+                Hi! I'm Marcin. I am currently building my skills in web development and UI/UX design. As I continue my journey in technology, I'm learning how to develop functional, responsive, and user-centered web applications—from designing interfaces and creating engaging user experiences to developing the front-end and back-end systems that bring those ideas to life.
               </p>
 
               {/* Social Icons */}
@@ -66,12 +66,12 @@ export default function About() {
               </h2>
             </div>
             <div className="bg-white border border-gray-200 rounded-xl p-8 md:p-10 flex flex-col md:flex-row items-center md:items-start gap-8 shadow-sm max-w-5xl mx-auto">
-              
+
               {/* Image/Logo */}
               <div className="w-full md:w-1/4 flex justify-center md:justify-start">
-                <img 
-                  src="/topcit.png" 
-                  alt="TOPCIT Certificate" 
+                <img
+                  src="/topcit.png"
+                  alt="TOPCIT Certificate"
                   className="w-full max-w-[200px] object-contain border border-gray-100 p-2 rounded-lg"
                 />
               </div>
@@ -87,9 +87,9 @@ export default function About() {
                 <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-6 max-w-2xl">
                   Achieved Level 3 proficiency in the TOPCIT examination, validating practical knowledge and competencies in software engineering, database management, network security, and IT business principles.
                 </p>
-                <a 
-                  href="/topcit-cert.pdf" 
-                  target="_blank" 
+                <a
+                  href="/topcit-cert.pdf"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-[#637C50] font-medium text-sm md:text-base hover:text-gray-900 transition-colors border-b border-transparent hover:border-gray-900 pb-0.5"
                 >

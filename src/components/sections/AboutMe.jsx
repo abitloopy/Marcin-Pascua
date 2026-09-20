@@ -64,7 +64,7 @@ export default function AboutMe() {
                   <h2 className="text-4xl font-bold text-[#637C50] tracking-wide">ABOUT ME</h2>
                 </div>
                 <p className="text-[19px] leading-relaxed text-gray-600 mb-6 font-medium">
-                  I'm an Information Technology student at the University of Cebu – Lapu-Lapu and Mandaue, currently learning full-stack web development and UI/UX design. I enjoy creating clean, responsive, and user-friendly digital experiences that combine functionality, creativity, and a touch of charm.
+                Hi! I'm Marcin. I am currently building my skills in web development and UI/UX design. As I continue my journey in technology, I'm learning how to develop functional, responsive, and user-centered web applications—from designing interfaces and creating engaging user experiences to developing the front-end and back-end systems that bring those ideas to life.
                 </p>
               </div>
 
@@ -72,7 +72,7 @@ export default function AboutMe() {
               <div className="flex flex-wrap gap-2 mb-8 mt-2 md:mt-0">
                 {[
                   "HTML5 & CSS3", "JavaScript (ES6+)", "React.js", 
-                  "Tailwind CSS", "Figma Design", "PHP", "Laravel", "SQL Server", "C Programming", "C#", "Java"
+                  "Tailwind CSS", "Figma", "PHP", "Laravel", "SQL Server", "C Programming", "C#", "Java"
                 ].map((skill, index) => (
                   <span 
                     key={index} 
