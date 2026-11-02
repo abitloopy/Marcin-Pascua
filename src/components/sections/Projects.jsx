@@ -1,203 +1,220 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ProjCard from "../ui/ProjCard";
+import SlideUpComponent from "../animations/SlideUpComponent";
 
 const projectsData = [
-  {
-    image: "/diaworld.png",
-    title: "Diaworld",
-    year: "2023",
-    subtitle: "First webdev passion project of an online jewelry store",
-    badge: ["HTML", "CSS", "Javascript"]
-  },
-  {
-    image: "/multivape.png",
-    title: "Multivape Shop",
-    year: "2024",
-    subtitle: "First group project of an online extension of a physical vape store",
-    badge: ["Java"]
-  },
-  {
-    image: "/beedget.png",
-    title: "Beedget",
-    year: "2025",
-    subtitle: "A simple budget planner system that helps you track your savings and expense. User and admin side are made using C# windows forms",
-    badge: ["C#", "SQL Server Management Studio"]
-  },
-  {
-    image: "/saligra.png",
-    title: "Saligra",
-    year: "2026",
-    subtitle: "An advanced Model Context Protocol (MCP) powered borrower reliability system designed to evaluate creditworthiness through intelligent risk-scoring.",
-    badge: ["React", "Tailwind CSS", "MCP Server (Tools)", "Express (Client)", "TypeScript", "Node.js"]
-  },
   {
     image: "/recap.png",
     title: "RECAP",
     year: "2026",
-    subtitle: "A mobile-responsive quiz bowl management and automated scoring system that streamlines event organization, answer recognition, scoring, participant monitoring, and real-time leaderboard updates.",
-    badge: ["Computer Vision", "OCR", "Convolutional Neural Networks (CNN)", "React", "Supabase"]
+    category: "Front-End",
+    subtitle: "Led the UI/UX design and frontend development of a mobile-responsive Quiz Bowl management system using React and Supabase. The platform automates answer recognition and scoring via Computer Vision, OCR, and CNN technologies, featuring intuitive event workflows, real-time participant monitoring, and live leaderboard updates.",
+    badge: ["Computer Vision", "OCR", "CNN", "React", "Supabase"],
+    link: "https://www.kaja-recap.online/"
   },
   {
     image: "/chew.png",
     title: "Chew!",
     year: "2026",
-    subtitle: "[UI/UX] A comprehensive design case study for an AI-powered smart meal planner, featuring personalized recipe recommendations and intuitive user flows.",
-    badge: ["Figma"]
+    category: "UI/UX",
+    subtitle: "Conducted an end-to-end UX case study and interactive Figma prototype for an AI-powered smart meal planner. Defined user personas, information architecture, and user flows to deliver personalized recipe recommendations tailored to dietary needs, creating an intuitive and accessible meal planning experience.",
+    badge: ["Figma"],
+    link: "https://www.figma.com/proto/GQsry4a2UP5MapALYoFhZU/Chew-App?node-id=0-1&t=pLlWUjMdpooUQjPd-1"
+  },
+  {
+    image: "/chishore-pic.png",
+    title: "Chishore",
+    year: "2026",
+    category: "Front-End",
+    subtitle: "Developed a responsive yacht booking website with a modern user interface, enabling users to explore luxury yachts, browse destinations, and book charter experiences through an intuitive and engaging frontend experience.",
+    badge: ["HTML", "CSS", "JavaScript", "React"],
+    link: "https://chishore.vercel.app/"
   },
   {
     image: "/zura.png",
     title: "Zura",
     year: "2026",
-    subtitle: "[UI/UX] An IoT-enabled smart waste management system that provides real-time monitoring of waste-bin levels and conditions to support timely collection and more efficient waste management.",
-    badge: ["Figma"]
+    category: "UI/UX",
+    subtitle: "Developed an end-to-end UX case study and interactive Figma prototype for a gamified recycling platform that promotes sustainable waste disposal. Conducted UX research and designed intuitive user journeys for activity tracking, point accumulation, and reward redemption to make eco-friendly habits rewarding and engaging.",
+    badge: ["Figma"],
+    link: "https://www.figma.com/proto/CA0PTO9pATWMmpGaRjmF9v/Zura?node-id=0-1&t=Nvb4hGSJ5qWwtfAr-1"
+  },
+  {
+    image: "/saligra.png",
+    title: "Saligra",
+    year: "2026",
+    category: "Front-End",
+    subtitle: "An intelligent borrower reliability and risk-scoring platform powered by the Model Context Protocol (MCP), evaluating creditworthiness through automated data analysis.",
+    badge: ["React", "Tailwind CSS", "MCP Server", "Express", "TypeScript", "Node.js"],
+    link: null
   },
   {
     image: "/scholaria.png",
     title: "Scholaria",
     year: "2026",
-    subtitle: "A system for recommending scholarship to a student based on the students eligibility.",
-    badge: ["React", "Supabase", "Tailwind CSS"]
+    category: "Front-End",
+    subtitle: "A smart scholarship recommendation platform that matches students with tailored academic opportunities based on eligibility criteria, streamlined applications, and real-time tracking.",
+    badge: ["React", "Supabase", "Tailwind CSS"],
+    link: null
   }
-].sort((a, b) => parseInt(b.year) - parseInt(a.year));
+];
 
 export default function Projects() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectedYear, setSelectedYear] = useState("All");
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const carouselRef = useRef(null);
 
-  const years = ["All", ...Array.from(new Set(projectsData.map(p => p.year)))];
-  
-  const filteredProjects = selectedYear === "All" 
-    ? projectsData 
-    : projectsData.filter(p => p.year === selectedYear);
+  const categories = ["All", "Front-End", "UI/UX"];
 
-  // Auto-play for main gallery
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % projectsData.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
+  const filteredProjects = selectedCategory === "All"
+    ? projectsData
+    : projectsData.filter((p) => p.category === selectedCategory);
 
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % projectsData.length);
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+    if (carouselRef.current) {
+      carouselRef.current.scrollTo({ left: 0, behavior: "smooth" });
+    }
   };
 
-  const handlePrev = () => {
-    setCurrentIndex((prev) => (prev - 1 + projectsData.length) % projectsData.length);
+  const scrollPrev = () => {
+    if (carouselRef.current) {
+      const card = carouselRef.current.querySelector(".project-card-item");
+      const scrollAmount = card ? card.offsetWidth + 16 : 300;
+      carouselRef.current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    }
   };
 
-  const currentProject = projectsData[currentIndex];
+  const scrollNext = () => {
+    if (carouselRef.current) {
+      const card = carouselRef.current.querySelector(".project-card-item");
+      const scrollAmount = card ? card.offsetWidth + 16 : 300;
+      carouselRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    }
+  };
 
   return (
-    <div id="projects" className="overflow-hidden pt-28 md:pt-36 pb-0 bg-white font-poppins">
-      <div className="max-w-7xl mx-auto px-4 w-full">
-        {/* Intro Heading & Subheading */}
-        <div className="flex flex-col items-center text-center mb-16 mt-4">
-          <h1 className="text-4xl md:text-5xl lg:text-5xl text-gray-900 font-bold mb-3 leading-tight">
-            My Featured <span className="text-[#637C50]">Projects</span>
-          </h1>
-          <p className="text-gray-500 font-medium text-[15px] md:text-base max-w-3xl leading-relaxed mx-auto">
-            A collection of my recent work, showcasing my expertise in web development, software engineering, and UI/UX design. Each project represents a unique challenge and a creative solution.
-          </p>
-        </div>
+    <SlideUpComponent>
+      <section 
+        id="projects" 
+        className="w-full bg-[#fcfcf9] py-16 sm:py-24 md:py-28 px-4 sm:px-6 md:px-8 font-poppins scroll-mt-20 overflow-hidden"
+      >
+        <div className="max-w-6xl mx-auto w-full">
+          
+          {/* Header */}
+          <div className="flex flex-col items-center text-center mb-8 sm:mb-10 md:mb-12">
+            <h2 className="text-3xl sm:text-4xl md:text-[44px] font-bold text-[#637C50] tracking-tight leading-tight">
+              My Featured Projects
+            </h2>
+            <p className="text-gray-700 text-sm sm:text-base max-w-2xl leading-relaxed mt-2.5 sm:mt-3">
+              A collection of my recent work, showcasing my expertise in web development, software engineering, and UI/UX design.
+            </p>
+          </div>
 
-        {/* Main Featured Image Area (Slideshow) */}
-        <div className="relative w-full max-w-[1000px] mx-auto flex items-center justify-center mb-24">
-          {/* Outer Left Arrow */}
-          <button 
-            onClick={handlePrev}
-            className="absolute -left-4 md:-left-16 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white border border-gray-100 text-gray-500 flex items-center justify-center shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-md z-10"
-          >
-            <i className="fa-solid fa-arrow-left text-sm md:text-base"></i>
-          </button>
+          {/* Category Tabs */}
+          <div className="flex items-center justify-center gap-6 sm:gap-12 md:gap-16 mb-10 sm:mb-14">
+            {categories.map((category) => {
+              const isActive = selectedCategory === category;
+              return (
+                <button
+                  key={category}
+                  type="button"
+                  onClick={() => handleCategoryChange(category)}
+                  className={`relative !bg-transparent hover:!bg-transparent active:!bg-transparent focus:!bg-transparent !border-0 !outline-none !shadow-none pb-2 sm:pb-2.5 px-1 sm:px-2 text-sm sm:text-base md:text-lg transition-colors cursor-pointer select-none ${
+                    isActive ? "text-[#637C50] font-bold" : "text-[#5a6b82] hover:text-[#637C50] font-semibold"
+                  }`}
+                  style={{ backgroundColor: "transparent" }}
+                >
+                  <span>{category}</span>
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeProjectTab"
+                      className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#637C50]"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                </button>
+              );
+            })}
+          </div>
 
-          <div className="relative w-full aspect-[4/3] md:aspect-video bg-gray-900 rounded-xl overflow-hidden shadow-xl group">
-            <AnimatePresence mode="wait">
-              <motion.img
-                key={currentIndex}
-                src={currentProject.image}
-                alt={currentProject.title}
-                initial={{ opacity: 0, x: 40 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -40 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-                className="w-full h-full object-cover opacity-90"
-              />
-            </AnimatePresence>
-            
-            {/* Main Image Overlay Info */}
-            <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 bg-gradient-to-t from-black/90 via-black/50 to-transparent text-white">
-               <div className="flex flex-wrap items-center gap-2 mb-3">
-                  <span className="bg-[#637C50] px-2.5 py-1 rounded text-xs font-bold tracking-widest uppercase">
-                    {currentProject.year}
-                  </span>
-                  {currentProject.badge.slice(0, 3).map((b, i) => (
-                    <span key={i} className="bg-white/20 px-2 py-0.5 rounded text-[11px] font-medium backdrop-blur-sm border border-white/10">
-                      {b}
-                    </span>
-                  ))}
-               </div>
-               <h2 className="text-2xl md:text-4xl font-bold mb-2 drop-shadow-md">{currentProject.title}</h2>
-               <p className="text-sm md:text-base text-gray-200 line-clamp-2 max-w-2xl drop-shadow-sm">{currentProject.subtitle}</p>
+          {/* Mobile: Horizontal Carousel with Sneak Peek of Next Card (< md) */}
+          <div className="md:hidden w-full">
+            <div 
+              ref={carouselRef}
+              className="flex gap-4 overflow-x-auto snap-x snap-mandatory py-4 px-4 -mx-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] scroll-smooth"
+            >
+              {filteredProjects.map((project) => (
+                <div
+                  key={project.title}
+                  className="project-card-item w-[82vw] max-w-[340px] shrink-0 snap-start flex flex-col h-full"
+                >
+                  <ProjCard
+                    image={project.image}
+                    title={project.title}
+                    year={project.year}
+                    subtitle={project.subtitle}
+                    badge={project.badge}
+                    category={project.category}
+                    link={project.link}
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* Mobile Carousel Round Arrow Buttons (<) (>) */}
+            <div className="flex items-center justify-center gap-4 mt-6">
+              <button
+                type="button"
+                onClick={scrollPrev}
+                aria-label="Previous project"
+                className="w-12 h-12 rounded-full bg-white border border-gray-200 text-gray-700 flex items-center justify-center hover:border-gray-400 hover:text-black active:scale-95 shadow-sm transition-all cursor-pointer select-none"
+              >
+                <i className="fa-solid fa-chevron-left text-xs"></i>
+              </button>
+              <button
+                type="button"
+                onClick={scrollNext}
+                aria-label="Next project"
+                className="w-12 h-12 rounded-full bg-white border border-gray-200 text-gray-700 flex items-center justify-center hover:border-gray-400 hover:text-black active:scale-95 shadow-sm transition-all cursor-pointer select-none"
+              >
+                <i className="fa-solid fa-chevron-right text-xs"></i>
+              </button>
             </div>
           </div>
-          
-          {/* Outer Right Arrow */}
-          <button 
-            onClick={handleNext}
-            className="absolute -right-4 md:-right-16 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#637C50] text-white flex items-center justify-center shadow-md transition-all duration-300 hover:scale-105 hover:bg-[#4a5d3c] z-10"
+
+          {/* Desktop: 6 Projects Grid (>= md) */}
+          <motion.div 
+            layout 
+            className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
           >
-            <i className="fa-solid fa-arrow-right text-sm md:text-base"></i>
-          </button>
-        </div>
-      </div>
+            <AnimatePresence mode="popLayout">
+              {filteredProjects.map((project) => (
+                <motion.div
+                  key={project.title}
+                  layout
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.3 }}
+                  className="h-full flex"
+                >
+                  <ProjCard
+                    image={project.image}
+                    title={project.title}
+                    year={project.year}
+                    subtitle={project.subtitle}
+                    badge={project.badge}
+                    category={project.category}
+                    link={project.link}
+                  />
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
 
-      {/* Projects Grid with Filter */}
-      <div className="w-full bg-gray-50 pt-16 pb-24 px-4 border-t border-gray-100">
-        
-        {/* Filter Buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-16 max-w-7xl mx-auto w-full">
-          {years.map((year) => (
-            <button
-              key={year}
-              onClick={() => setSelectedYear(year)}
-              className={`px-4 py-1.5 rounded-full font-semibold transition-all duration-300 text-xs md:text-sm border shadow-sm ${
-                selectedYear === year
-                  ? "bg-[#637C50] text-white border-[#637C50] shadow-md"
-                  : "bg-white text-gray-600 border-gray-200 hover:bg-[#A1C680] hover:text-white hover:border-[#A1C680] hover:-translate-y-0.5"
-              }`}
-            >
-              {year}
-            </button>
-          ))}
         </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center gap-10 max-w-7xl mx-auto">
-          <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project, index) => (
-              <motion.div
-                key={project.title}
-                layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.3 }}
-                className="w-full flex justify-center"
-              >
-                <ProjCard
-                  image={project.image}
-                  title={project.title}
-                  year={project.year}
-                  subtitle={project.subtitle}
-                  badge={project.badge}
-                  variant="direct"
-                />
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </div>
-      </div>
-    </div>
+      </section>
+    </SlideUpComponent>
   );
 }

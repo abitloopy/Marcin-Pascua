@@ -1,133 +1,112 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import SlideUpComponent from "../animations/SlideUpComponent";
 
 export default function AboutMe() {
   return (
-    <>
-      <SlideUpComponent>
-        <div id="about" className="flex flex-col items-center justify-center pt-32 md:pt-40 pb-24 px-4 w-full max-w-6xl mx-auto">
-          {/* New Hero Composition */}
-          <div className="relative w-full flex flex-col justify-center items-center">
+    <SlideUpComponent>
+      <section id="about" className="w-full bg-white pt-16 sm:pt-20 md:pt-24 pb-20 md:pb-28 px-6 sm:px-10 md:px-14 lg:px-20 font-poppins scroll-mt-20">
+        <div id="about-intro" className="w-full max-w-5xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-10 md:gap-12 lg:gap-16">
+          
+          {/* Left Column: ID Lace Card */}
+          <div className="flex-1 flex justify-center items-center w-full py-4 md:py-6">
+            <img 
+              src="/marcin-id-pic.png" 
+              alt="Marcin ID Badge" 
+              className="w-[240px] sm:w-[270px] md:w-[320px] lg:w-[350px] max-w-full object-contain rotate-[10deg] drop-shadow-xl hover:-translate-y-2 hover:rotate-[6deg] transition-all duration-500 select-none" 
+            />
+          </div>
+
+          {/* Right Column: About Me & Experience */}
+          <div className="flex-[1.3] lg:flex-[1.4] w-full md:border-l md:border-gray-200 md:pl-10 lg:pl-14 flex flex-col items-start text-left">
             
-            {/* Background Typography Image */}
-            <div className="relative z-0 w-full flex justify-center px-4">
-              <img 
-                src="/hero-heading.png" 
-                alt="My Portfolio" 
-                className="w-full max-w-[1200px] h-auto object-contain drop-shadow-sm" 
-              />
-              
-              {/* Animated Chat Bubble Overlay */}
-              <div className="absolute top-[55%] left-[55%] sm:left-[58%] transform -translate-y-1/2 z-20 animate-[bounce_3s_infinite]">
-                 <div className="relative bg-[#eacbc8] text-gray-800 px-6 py-2 md:px-8 md:py-3 rounded-[30px] font-medium text-base sm:text-lg md:text-xl shadow-md whitespace-nowrap font-poppins">
-                   Hi! I'm Marcin
-                   {/* Left pointing tail using CSS borders for a clean point */}
-                   <div className="absolute top-1/2 left-[-10px] md:left-[-12px] transform -translate-y-1/2 w-0 h-0 border-t-[8px] md:border-t-[10px] border-t-transparent border-r-[12px] md:border-r-[16px] border-r-[#eacbc8] border-b-[8px] md:border-b-[10px] border-b-transparent"></div>
-                 </div>
+            {/* About Me Section */}
+            <div className="w-full">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-950 tracking-tight mb-4">
+                About Me
+              </h2>
+
+              <p className="text-gray-700 text-[14px] sm:text-[15px] md:text-[15.5px] leading-relaxed font-normal">
+                I am a graduating student pursuing Bachelor of Science in Information Technology currently building my skills in web development and UI/UX design. As I continue my journey in technology, I’m learning how to develop functional, responsive, and user-centered web applications from designing interfaces and creating engaging user experiences to developing the front-end and back-end systems that bring those ideas to life.
+              </p>
+
+              {/* Social Icons */}
+              <div className="flex items-center gap-3 mt-5">
+                <a 
+                  href="mailto:pascua.marcin1@gmail.com" 
+                  aria-label="Email"
+                  className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-gray-200 bg-[#f9fafb] text-gray-700 flex items-center justify-center hover:bg-black hover:text-white hover:border-black hover:-translate-y-0.5 transition-all duration-300 shadow-2xs text-xs"
+                >
+                  <i className="fa-regular fa-envelope"></i>
+                </a>
+                <a 
+                  href="https://github.com/abitloopy" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  aria-label="GitHub"
+                  className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-gray-200 bg-[#f9fafb] text-gray-700 flex items-center justify-center hover:bg-black hover:text-white hover:border-black hover:-translate-y-0.5 transition-all duration-300 shadow-2xs text-xs"
+                >
+                  <i className="fa-brands fa-github"></i>
+                </a>
+                <a 
+                  href="https://linkedin.com/in/marcinpascua" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  aria-label="LinkedIn"
+                  className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-gray-200 bg-[#f9fafb] text-gray-700 flex items-center justify-center hover:bg-black hover:text-white hover:border-black hover:-translate-y-0.5 transition-all duration-300 shadow-2xs text-xs"
+                >
+                  <i className="fa-brands fa-linkedin-in"></i>
+                </a>
               </div>
             </div>
 
+            {/* Experience Section */}
+            <div className="mt-10 md:mt-12 w-full">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-950 tracking-tight mb-6">
+                Experience
+              </h2>
 
+              <div className="flex items-start gap-4 w-full">
+                {/* Logo */}
+                <img 
+                  src="/mydoktora-pic.png" 
+                  alt="myDoktora Logo" 
+                  className="w-12 h-12 sm:w-13 sm:h-13 rounded-xl object-contain shrink-0 shadow-sm border border-gray-100" 
+                />
 
-          </div>
-
-          {/* Intro Section - Two Column Layout */}
-          <div id="about-intro" className="w-full max-w-6xl mx-auto px-4 mt-24 flex flex-col md:flex-row items-center gap-12 md:gap-20 font-poppins scroll-mt-24">
-            {/* Left Content */}
-            <div className="flex-1 flex flex-col items-start text-left w-full">
-              
-              {/* Mobile Layout: Text on Left, Picture on Right */}
-              <div className="w-full flex md:hidden items-start justify-between gap-4 mb-6">
-                <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-1.5 h-8 bg-[#EAC9CB] rounded-full mt-1"></div>
-                    <h2 className="text-2xl font-bold text-[#637C50] tracking-wide">ABOUT ME</h2>
+                {/* Details */}
+                <div className="flex-1 flex flex-col">
+                  {/* Top line: Role / Company & Dates */}
+                  <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 w-full">
+                    <div>
+                      <h3 className="font-bold text-base sm:text-[17px] text-gray-950 leading-snug">
+                        myDoktora
+                      </h3>
+                      <p className="font-semibold text-sm sm:text-base text-gray-900">
+                        UI/UX Design Intern
+                      </p>
+                    </div>
+                    <span className="text-xs sm:text-sm text-gray-600 font-medium whitespace-nowrap">
+                      10/2026 - Present
+                    </span>
                   </div>
-                  <p className="text-[13.5px] leading-relaxed text-gray-600 font-medium">
-                    I'm an Information Technology student at the University of Cebu – Lapu-Lapu and Mandaue, currently learning full-stack web development and UI/UX design. I enjoy creating clean, responsive, and user-friendly digital experiences that combine functionality, creativity, and a touch of charm.
+
+                  {/* Location */}
+                  <p className="italic text-xs sm:text-[13px] text-gray-600 mt-0.5">
+                    New York, USA | PH-based Remote
+                  </p>
+
+                  {/* Description */}
+                  <p className="text-xs sm:text-sm text-gray-700 leading-relaxed mt-3">
+                    Collaborated with a senior UI/UX designer as part of Genuinexs' Philippines-based design team to enhance the user experience and visual design of the myDoktora platform, while contributing to web and mobile beta testing.
                   </p>
                 </div>
-                <div className="w-[150px] shrink-0 flex justify-end mt-2">
-                  <img 
-                    src="/marcin-id-pic.png" 
-                    alt="Marcin ID" 
-                    className="w-full object-contain rotate-[12deg] drop-shadow-xl" 
-                  />
-                </div>
-              </div>
-
-              {/* Desktop Layout: Heading & Text (Picture is in Right Content below) */}
-              <div className="hidden md:block w-full">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-2 h-10 bg-[#EAC9CB] rounded-full"></div>
-                  <h2 className="text-4xl font-bold text-[#637C50] tracking-wide">ABOUT ME</h2>
-                </div>
-                <p className="text-[19px] leading-relaxed text-gray-600 mb-6 font-medium">
-                Hi! I'm Marcin. I am currently building my skills in web development and UI/UX design. As I continue my journey in technology, I'm learning how to develop functional, responsive, and user-centered web applications—from designing interfaces and creating engaging user experiences to developing the front-end and back-end systems that bring those ideas to life.
-                </p>
-              </div>
-
-              {/* Skill Tags */}
-              <div className="flex flex-wrap gap-2 mb-8 mt-2 md:mt-0">
-                {[
-                  "HTML5 & CSS3", "JavaScript (ES6+)", "React.js", 
-                  "Tailwind CSS", "Figma", "PHP", "Laravel", "SQL Server", "C Programming", "C#", "Java"
-                ].map((skill, index) => (
-                  <span 
-                    key={index} 
-                    className="px-3.5 py-1.5 md:px-4 md:py-2 bg-[#F0F4EC] text-[#4A6B53] rounded-full text-[13.5px] md:text-[16px] font-semibold border border-[#D5E1D1] shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-
-              <div className="flex flex-wrap items-center gap-3 md:gap-4">
-                <Link to="/about" className="bg-[#637C50] text-white px-4 py-2 md:px-6 md:py-2.5 rounded-full font-medium hover:bg-[#A1C680] hover:text-white hover:-translate-y-1 transition-all duration-300 flex items-center gap-2 md:gap-3 shadow-md text-[13px] md:text-base">
-                  Learn More <span>&rarr;</span>
-                </Link>
-                <div className="flex items-center gap-2 md:gap-3">
-                  <a 
-                    href="mailto:contact@example.com" 
-                    className="w-9 h-9 md:w-11 md:h-11 rounded-full bg-white border border-gray-200 text-[#637C50] flex items-center justify-center hover:bg-[#A1C680] hover:text-white hover:border-[#A1C680] hover:-translate-y-1 transition-all duration-300 shadow-sm"
-                    aria-label="Email"
-                  >
-                    <i className="fa-regular fa-envelope text-base md:text-lg"></i>
-                  </a>
-                  <a 
-                    href="https://github.com" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="w-9 h-9 md:w-11 md:h-11 rounded-full bg-white border border-gray-200 text-[#637C50] flex items-center justify-center hover:bg-[#A1C680] hover:text-white hover:border-[#A1C680] hover:-translate-y-1 transition-all duration-300 shadow-sm"
-                    aria-label="GitHub"
-                  >
-                    <i className="fa-brands fa-github text-base md:text-lg"></i>
-                  </a>
-                  <a 
-                    href="https://linkedin.com" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="w-9 h-9 md:w-11 md:h-11 rounded-full bg-white border border-gray-200 text-[#637C50] flex items-center justify-center hover:bg-[#A1C680] hover:text-white hover:border-[#A1C680] hover:-translate-y-1 transition-all duration-300 shadow-sm"
-                    aria-label="LinkedIn"
-                  >
-                    <i className="fa-brands fa-linkedin-in text-base md:text-lg"></i>
-                  </a>
-                </div>
               </div>
             </div>
 
-            {/* Right Content - ID Picture (Desktop Only) */}
-            <div className="hidden md:flex flex-1 justify-center items-center w-full px-4">
-              <img 
-                src="/marcin-id-pic.png" 
-                alt="Marcin ID" 
-                className="w-full max-w-[450px] object-contain rotate-[12deg] hover:-translate-y-2 hover:rotate-[8deg] transition-all duration-500 drop-shadow-xl" 
-              />
-            </div>
           </div>
+
         </div>
-      </SlideUpComponent>
-    </>
+      </section>
+    </SlideUpComponent>
   );
 }

@@ -42,7 +42,7 @@ export const achievementsData = [
   {
     logo: "/ccs.png",
     image: "/psite.jpg",
-    title: "𝗣𝗦𝗜𝗧𝗘 Region 7 𝗜𝗖𝗧 𝗖𝗼𝗻𝗴𝗿𝗲𝘀𝘀 Pitching Competition",
+    title: "PSITE Region 7 ICT Congress: Pitching Competition",
     award: "3rd Place",
     year: "2026-2027",
     description: "Got to present a cool tech solution and business model to the judges. It was an awesome learning experience!"

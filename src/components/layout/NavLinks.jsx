@@ -1,34 +1,62 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-export default function NavLinks({ itemClassName = "text-[#637C50] hover:text-[#A1C680]" }) {
+export default function NavLinks({ 
+  activeSection = "home",
+  onNavClick,
+  itemClassName = "text-gray-600 hover:text-[#637C50] font-medium",
+  activeClassName = "text-[#637C50] font-semibold" 
+}) {
   const links = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Projects", href: "/projects" },
-    { name: "Achievements", href: "/achievements" }
+    { name: "Home", href: "#home", id: "home" },
+    { name: "About", href: "#about", id: "about" },
+    { name: "Projects", href: "#projects", id: "projects" },
+    { name: "Achievements", href: "#achievements", id: "achievements" },
+    { name: "Contact", href: "mailto:pascua.marcin1@gmail.com", id: "contact" }
   ];
 
-  return (
-      <nav className="w-full font-poppins flex flex-row flex-wrap justify-center gap-4 md:gap-8 items-center">
-        {links.map((link, i) => {
-          const isHashLink = link.href.includes("#");
-          const className = `font-semibold hover:-translate-y-1 transition-all duration-300 inline-block text-sm md:text-base ${itemClassName}`;
+  const handleClick = (e, href) => {
+    if (href.startsWith("mailto:")) {
+      if (onNavClick) {
+        onNavClick(e, href);
+      }
+      return;
+    }
 
-          return (
-            <div key={i} className="relative group">
-              {isHashLink ? (
-                <a href={link.href} className={className}>
-                  {link.name}
-                </a>
-              ) : (
-                <Link to={link.href} className={className}>
-                  {link.name}
-                </Link>
-              )}
-            </div>
-          );
-        })}
-      </nav>
+    if (onNavClick) {
+      onNavClick(e, href);
+    } else {
+      e.preventDefault();
+      const id = href.replace("#", "");
+      if (id === "home") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    }
+  };
+
+  return (
+    <nav className="font-poppins flex flex-row items-center gap-6 sm:gap-7 md:gap-8">
+      {links.map((link) => {
+        const isActive = activeSection === link.id;
+
+        return (
+          <div key={link.id} className="relative">
+            <a 
+              href={link.href} 
+              onClick={(e) => handleClick(e, link.href)}
+              className={`hover:-translate-y-0.5 transition-all duration-200 inline-block py-1 text-[13.5px] md:text-[14px] tracking-wide cursor-pointer select-none ${
+                isActive ? activeClassName : itemClassName
+              }`}
+            >
+              {link.name}
+            </a>
+          </div>
+        );
+      })}
+    </nav>
   );
 }

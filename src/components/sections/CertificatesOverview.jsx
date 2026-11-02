@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const certificates = [
@@ -21,20 +20,28 @@ export default function CertificatesOverview() {
 
   useEffect(() => {
     let animationFrameId;
+    let lastTime = performance.now();
+    let accumulatedScroll = scrollRef.current ? scrollRef.current.scrollLeft : 0;
     
-    const autoScroll = () => {
+    // Smooth, gentle scroll speed (30px per second)
+    const speed = 30;
+
+    const autoScroll = (currentTime) => {
+      const delta = (currentTime - lastTime) / 1000;
+      lastTime = currentTime;
+
       if (scrollRef.current && !isHovered && !selectedCert) {
-        // Slowly scroll right
-        scrollRef.current.scrollLeft += 1;
+        accumulatedScroll += speed * Math.min(delta, 0.1);
         
-        // Reset to beginning if reached the end to create infinite effect
-        if (
-          scrollRef.current.scrollLeft >=
-          scrollRef.current.scrollWidth - scrollRef.current.clientWidth - 1
-        ) {
-          scrollRef.current.scrollLeft = 0;
+        const maxScroll = scrollRef.current.scrollWidth - scrollRef.current.clientWidth;
+        if (accumulatedScroll >= maxScroll - 1) {
+          accumulatedScroll = 0;
         }
+        scrollRef.current.scrollLeft = accumulatedScroll;
+      } else if (scrollRef.current) {
+        accumulatedScroll = scrollRef.current.scrollLeft;
       }
+
       animationFrameId = requestAnimationFrame(autoScroll);
     };
 
@@ -57,19 +64,12 @@ export default function CertificatesOverview() {
   return (
     <div className="pt-0 pb-20 w-full overflow-hidden bg-white flex flex-col items-center justify-center font-poppins relative">
       <div className="flex flex-col items-center text-center mb-10 px-4 md:px-0 mt-6">
-        <h2 className="text-[34px] leading-[1.15] sm:text-5xl md:text-3xl lg:text-5xl text-gray-900 font-extrabold mb-4 md:mb-6 max-w-3xl">
+        <h2 className="text-[34px] leading-[1.15] sm:text-5xl md:text-3xl lg:text-5xl text-[#637C50] font-extrabold mb-4 md:mb-6 max-w-3xl">
           My Certifications
         </h2>
-        <p className="text-gray-500 font-medium text-[15px] md:text-lg max-w-xl mx-auto mb-8">
+        <p className="text-gray-500 font-medium text-[15px] md:text-lg max-w-xl mx-auto">
           A sneak peek into my continuous journey of learning, certifications, and upskilling.
         </p>
-        <Link 
-          to="/achievements#certificates" 
-          className="group flex items-center gap-2 md:gap-3 bg-[#637C50] text-white px-5 py-2.5 md:px-8 md:py-4 rounded-full font-bold text-[14px] md:text-lg hover:text-white hover:bg-[#A1C680] hover:-translate-y-1 transition-all duration-300 shadow-md md:shadow-lg hover:shadow-xl shrink-0"
-        >
-          View All Certificates 
-          <i className="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform text-[11px] md:text-base"></i>
-        </Link>
       </div>
 
       {/* Carousel Container */}
@@ -87,17 +87,19 @@ export default function CertificatesOverview() {
         {/* Left Arrow */}
         <button 
           onClick={scrollLeft}
-          className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white border border-gray-200 text-gray-600 flex items-center justify-center hover:bg-[#637C50] hover:text-white hover:border-[#637C50] transition-all duration-300 shadow-md z-20 opacity-0 group-hover:opacity-100 disabled:opacity-50"
+          aria-label="Previous certificates"
+          className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white border border-gray-200 text-gray-700 flex items-center justify-center hover:text-black hover:border-gray-400 hover:shadow-xs active:scale-95 transition-all duration-200 shadow-sm z-20 cursor-pointer select-none opacity-0 group-hover:opacity-100"
         >
-          <i className="fa-solid fa-arrow-left"></i>
+          <i className="fa-solid fa-chevron-left text-xs"></i>
         </button>
 
         {/* Right Arrow */}
         <button 
           onClick={scrollRight}
-          className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white border border-gray-200 text-gray-600 flex items-center justify-center hover:bg-[#637C50] hover:text-white hover:border-[#637C50] transition-all duration-300 shadow-md z-20 opacity-0 group-hover:opacity-100 disabled:opacity-50"
+          aria-label="Next certificates"
+          className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white border border-gray-200 text-gray-700 flex items-center justify-center hover:text-black hover:border-gray-400 hover:shadow-xs active:scale-95 transition-all duration-200 shadow-sm z-20 cursor-pointer select-none opacity-0 group-hover:opacity-100"
         >
-          <i className="fa-solid fa-arrow-right"></i>
+          <i className="fa-solid fa-chevron-right text-xs"></i>
         </button>
 
         {/* Scrolling Track */}
@@ -119,7 +121,7 @@ export default function CertificatesOverview() {
                   setSelectedCert(certImage);
                 }
               }}
-              className={`w-[280px] md:w-[350px] h-[200px] md:h-[245px] flex-shrink-0 bg-gray-50 rounded-2xl shadow-sm border ${cert.starred ? 'border-yellow-400 ring-2 ring-yellow-400/20' : 'border-gray-100'} overflow-hidden transition-all duration-300 hover:shadow-lg hover:scale-105 hover:-translate-y-1 cursor-pointer relative group/card`}
+              className={`w-[280px] md:w-[350px] h-[200px] md:h-[245px] flex-shrink-0 bg-gray-50 rounded-none shadow-sm border ${cert.starred ? 'border-yellow-400 ring-2 ring-yellow-400/20' : 'border-gray-100'} overflow-hidden transition-all duration-300 hover:shadow-lg hover:scale-105 hover:-translate-y-1 cursor-pointer relative group/card`}
             >
               {cert.starred && (
                 <div className="absolute top-4 right-4 bg-gradient-to-br from-yellow-300 to-yellow-500 text-white w-9 h-9 rounded-full flex items-center justify-center shadow-md z-10" title="Featured">
@@ -166,7 +168,7 @@ export default function CertificatesOverview() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
               transition={{ type: "spring", stiffness: 300, damping: 25 }}
-              className="relative z-10 w-full max-w-[900px] bg-white rounded-2xl shadow-2xl overflow-hidden font-poppins"
+              className="relative z-10 w-full max-w-[900px] bg-white rounded-none shadow-2xl overflow-hidden font-poppins"
             >
               {/* Close Button */}
               <button 
@@ -182,7 +184,7 @@ export default function CertificatesOverview() {
                 <img 
                   src={selectedCert} 
                   alt="Certificate Full View" 
-                  className="w-full h-auto max-h-[85vh] object-contain rounded-lg" 
+                  className="w-full h-auto max-h-[85vh] object-contain rounded-none" 
                 />
               </div>
             </motion.div>

@@ -48,8 +48,8 @@ export default function AchievementsPage() {
           
           {/* Intro Heading & Subheading */}
           <div className="flex flex-col items-center text-center mb-16">
-            <h1 className="text-4xl md:text-5xl lg:text-5xl text-gray-900 font-bold mb-3 leading-tight">
-              My Journey & <span className="text-[#637C50]">Milestones</span>
+            <h1 className="text-4xl md:text-5xl lg:text-5xl text-[#637C50] font-bold mb-3 leading-tight">
+              My Journey & Milestones
             </h1>
             <p className="text-gray-500 font-medium text-[15px] md:text-base max-w-3xl leading-relaxed mx-auto">
               A visual gallery of the competitions I've joined, the challenges I've conquered, and the recognitions I've received along the way. Every picture tells a story of growth and learning.
