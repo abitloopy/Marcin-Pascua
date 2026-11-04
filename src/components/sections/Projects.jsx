@@ -5,7 +5,7 @@ import SlideUpComponent from "../animations/SlideUpComponent";
 
 const projectsData = [
   {
-    image: "/recap.png",
+    image: "/recap.webp",
     title: "RECAP",
     year: "2026",
     category: "Front-End",
@@ -14,7 +14,7 @@ const projectsData = [
     link: "https://www.kaja-recap.online/"
   },
   {
-    image: "/chew.png",
+    image: "/chew.webp",
     title: "Chew!",
     year: "2026",
     category: "UI/UX",
@@ -23,7 +23,7 @@ const projectsData = [
     link: "https://www.figma.com/proto/GQsry4a2UP5MapALYoFhZU/Chew-App?node-id=0-1&t=pLlWUjMdpooUQjPd-1"
   },
   {
-    image: "/chishore-pic.png",
+    image: "/chishore-pic.webp",
     title: "Chishore",
     year: "2026",
     category: "Front-End",
@@ -32,7 +32,7 @@ const projectsData = [
     link: "https://chishore.vercel.app/"
   },
   {
-    image: "/zura.png",
+    image: "/zura.webp",
     title: "Zura",
     year: "2026",
     category: "UI/UX",
@@ -41,7 +41,7 @@ const projectsData = [
     link: "https://www.figma.com/proto/CA0PTO9pATWMmpGaRjmF9v/Zura?node-id=0-1&t=Nvb4hGSJ5qWwtfAr-1"
   },
   {
-    image: "/saligra.png",
+    image: "/saligra.webp",
     title: "Saligra",
     year: "2026",
     category: "Front-End",
@@ -50,7 +50,7 @@ const projectsData = [
     link: null
   },
   {
-    image: "/scholaria.png",
+    image: "/scholaria.webp",
     title: "Scholaria",
     year: "2026",
     category: "Front-End",

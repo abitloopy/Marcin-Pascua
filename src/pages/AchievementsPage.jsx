@@ -181,14 +181,14 @@ export default function AchievementsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
             {[
-              { image: "/topcit.png", pdf: "/topcit-cert.pdf", starred: true },
-              { image: "/cert1.png" },
-              { image: "/cert2.png" },
-              { image: "/cert3.png" },
-              { image: "/cert4.png" },
-              { image: "/cert5.png" },
-              { image: "/cert6.png" },
-              { image: "/cert7.png" }
+              { image: "/topcit.webp", pdf: "/topcit-cert.pdf", starred: true },
+              { image: "/cert1.webp" },
+              { image: "/cert2.webp" },
+              { image: "/cert3.webp" },
+              { image: "/cert4.webp" },
+              { image: "/cert5.webp" },
+              { image: "/cert6.webp" },
+              { image: "/cert7.webp" }
             ].map((cert, index) => {
               const certImage = cert.image || cert;
               const certPdf = cert.pdf || null;
@@ -209,6 +209,8 @@ export default function AchievementsPage() {
                 <img 
                   src={certImage} 
                   alt={`Certificate ${index + 1}`} 
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-[1.02]" 
                 />
               </div>

@@ -11,8 +11,10 @@ export default function AboutMe() {
           {/* Left Column: ID Lace Card */}
           <div className="flex-1 flex justify-center items-center w-full py-4 md:py-6">
             <img 
-              src="/marcin-id-pic.png" 
+              src="/marcin-id-pic.webp" 
               alt="Marcin ID Badge" 
+              loading="lazy"
+              decoding="async"
               className="w-[240px] sm:w-[270px] md:w-[320px] lg:w-[350px] max-w-full object-contain rotate-[10deg] drop-shadow-xl hover:-translate-y-2 hover:rotate-[6deg] transition-all duration-500 select-none" 
             />
           </div>

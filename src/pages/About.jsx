@@ -28,8 +28,10 @@ export default function About() {
             {/* Image/Logo */}
             <div className="w-full md:w-1/4 flex justify-center md:justify-start">
               <img
-                src="/topcit.png"
+                src="/topcit.webp"
                 alt="TOPCIT Certificate"
+                loading="lazy"
+                decoding="async"
                 className="w-full max-w-[200px] object-contain border border-gray-100 p-2 rounded-lg"
               />
             </div>

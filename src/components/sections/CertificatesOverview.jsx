@@ -2,14 +2,14 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const certificates = [
-  { image: "/topcit.png", pdf: "/topcit-cert.pdf", starred: true },
-  { image: "/cert1.png" },
-  { image: "/cert2.png" },
-  { image: "/cert3.png" },
-  { image: "/cert4.png" },
-  { image: "/cert5.png" },
-  { image: "/cert6.png" },
-  { image: "/cert7.png" }
+  { image: "/topcit.webp", pdf: "/topcit-cert.pdf", starred: true },
+  { image: "/cert1.webp" },
+  { image: "/cert2.webp" },
+  { image: "/cert3.webp" },
+  { image: "/cert4.webp" },
+  { image: "/cert5.webp" },
+  { image: "/cert6.webp" },
+  { image: "/cert7.webp" }
 ];
 
 export default function CertificatesOverview() {
@@ -159,6 +159,8 @@ export default function CertificatesOverview() {
                   <img 
                     src={certImage} 
                     alt={`Certificate ${mobileIndex + 1}`} 
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-contain p-4 select-none" 
                   />
                 </motion.div>
@@ -248,6 +250,8 @@ export default function CertificatesOverview() {
               <img 
                 src={certImage} 
                 alt={`Certificate ${index + 1}`} 
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-contain p-4" 
               />
               

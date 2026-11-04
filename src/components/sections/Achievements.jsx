@@ -105,6 +105,8 @@ export default function Achievements() {
                     <img
                       src={currentItem.image}
                       alt={currentItem.title}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover rounded-none"
                     />
                   </div>
