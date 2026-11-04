@@ -23,8 +23,8 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative w-full bg-[#fcfcf9] rounded-b-[40px] sm:rounded-b-[60px] md:rounded-b-[80px] lg:rounded-b-[100px] overflow-hidden pt-32 sm:pt-36 md:pt-40 lg:pt-44 pb-24 sm:pb-28 md:pb-32 lg:pb-36 px-6 sm:px-10 md:px-14 lg:px-20 font-poppins scroll-mt-20">
-      <div className="w-full max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 md:gap-16 lg:gap-20">
+    <section id="home" className="relative w-full bg-[#fcfcf9] rounded-b-[40px] sm:rounded-b-[60px] md:rounded-b-[80px] lg:rounded-b-[100px] overflow-hidden pt-28 sm:pt-32 md:pt-36 lg:pt-40 pb-20 sm:pb-24 md:pb-28 lg:pb-32 px-4 sm:px-6 md:px-8 lg:px-12 font-poppins scroll-mt-20">
+      <div className="w-full max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10 sm:gap-12 md:gap-16 lg:gap-20">
         
         {/* Left Column: Heading, Subtitle & Button */}
         <motion.div 
@@ -46,10 +46,10 @@ export default function Hero() {
             <a
               href="#about-intro"
               onClick={handleScrollToAbout}
-              className="inline-flex items-center gap-2.5 bg-[#637C50] text-white px-7 py-3 md:py-3.5 rounded-full font-medium text-sm md:text-base hover:bg-[#A1C680] hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 group cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 bg-[#637C50] text-white px-6 py-2.5 sm:px-6.5 sm:py-3 rounded-full font-medium text-sm sm:text-base leading-none hover:bg-[#A1C680] hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 group cursor-pointer"
             >
-              <span>Learn More</span>
-              <i className="fa-solid fa-arrow-down text-xs transition-transform duration-300 group-hover:translate-y-0.5"></i>
+              <span className="leading-none">Learn More</span>
+              <i className="fa-solid fa-arrow-down text-xs transition-transform duration-300 group-hover:translate-y-0.5 leading-none"></i>
             </a>
           </div>
         </motion.div>
@@ -70,41 +70,70 @@ export default function Hero() {
             />
 
             {/* Floating Badge 1: LinkedIn (Top Right) */}
-            <motion.a
-              href="https://linkedin.com/in/marcinpascua"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
+            <motion.div
               animate={{ y: [0, -6, 0] }}
               transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-[4%] sm:top-[5%] right-[6%] sm:right-[8%] md:right-[9%] w-10 h-10 sm:w-12 sm:h-12 md:w-13 md:h-13 lg:w-14 lg:h-14 bg-white rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.12)] flex items-center justify-center text-gray-800 hover:text-[#0A66C2] hover:scale-110 hover:shadow-xl transition-all duration-300 z-20 cursor-pointer"
+              className="absolute top-[4%] sm:top-[5%] right-[6%] sm:right-[8%] md:right-[9%] z-20"
             >
-              <i className="fa-brands fa-linkedin-in text-base sm:text-lg md:text-xl"></i>
-            </motion.a>
+              <a
+                href="https://linkedin.com/in/marcinpascua"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="w-10 h-10 sm:w-12 sm:h-12 md:w-13 md:h-13 lg:w-14 lg:h-14 bg-white border border-gray-100 rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.12)] flex items-center justify-center text-[#637C50] hover:bg-[#A1C680] hover:text-white hover:border-[#A1C680] hover:-translate-y-1.5 hover:scale-110 hover:shadow-xl transition-all duration-300 cursor-pointer block"
+              >
+                <i className="fa-brands fa-linkedin-in text-base sm:text-lg md:text-xl"></i>
+              </a>
+            </motion.div>
 
             {/* Floating Badge 2: GitHub (Middle Left) */}
-            <motion.a
-              href="https://github.com/abitloopy"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
+            <motion.div
               animate={{ y: [0, 6, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
-              className="absolute top-[35%] -left-3 sm:-left-5 md:-left-6 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 md:w-13 md:h-13 lg:w-14 lg:h-14 bg-white rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.12)] flex items-center justify-center text-gray-800 hover:text-black hover:scale-110 hover:shadow-xl transition-all duration-300 z-20 cursor-pointer"
+              className="absolute top-[35%] -left-3 sm:-left-5 md:-left-6 -translate-y-1/2 z-20"
             >
-              <i className="fa-brands fa-github text-lg sm:text-xl md:text-2xl"></i>
-            </motion.a>
+              <a
+                href="https://github.com/abitloopy"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                className="w-10 h-10 sm:w-12 sm:h-12 md:w-13 md:h-13 lg:w-14 lg:h-14 bg-white border border-gray-100 rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.12)] flex items-center justify-center text-[#637C50] hover:bg-[#A1C680] hover:text-white hover:border-[#A1C680] hover:-translate-y-1.5 hover:scale-110 hover:shadow-xl transition-all duration-300 cursor-pointer block"
+              >
+                <i className="fa-brands fa-github text-lg sm:text-xl md:text-2xl"></i>
+              </a>
+            </motion.div>
 
             {/* Floating Badge 3: Email (Lower Right) */}
-            <motion.a
-              href="mailto:pascua.marcin1@gmail.com"
-              aria-label="Email"
+            <motion.div
               animate={{ y: [0, -5, 0] }}
               transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-              className="absolute top-[64%] -right-3 sm:-right-5 md:-right-6 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 md:w-13 md:h-13 lg:w-14 lg:h-14 bg-white rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.12)] flex items-center justify-center text-gray-800 hover:text-black hover:scale-110 hover:shadow-xl transition-all duration-300 z-20 cursor-pointer"
+              className="absolute top-[64%] -right-3 sm:-right-5 md:-right-6 -translate-y-1/2 z-20"
             >
-              <i className="fa-regular fa-envelope text-base sm:text-lg md:text-xl"></i>
-            </motion.a>
+              <a
+                href="mailto:pascua.marcin1@gmail.com"
+                aria-label="Email"
+                className="w-10 h-10 sm:w-12 sm:h-12 md:w-13 md:h-13 lg:w-14 lg:h-14 bg-white border border-gray-100 rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.12)] flex items-center justify-center text-[#637C50] hover:bg-[#A1C680] hover:text-white hover:border-[#A1C680] hover:-translate-y-1.5 hover:scale-110 hover:shadow-xl transition-all duration-300 cursor-pointer block"
+              >
+                <i className="fa-regular fa-envelope text-base sm:text-lg md:text-xl"></i>
+              </a>
+            </motion.div>
+
+            {/* Floating Badge 4: Instagram (Bottom-Left Curve of Portrait) */}
+            <motion.div
+              animate={{ y: [0, -5, 0] }}
+              transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut", delay: 1.1 }}
+              className="absolute bottom-[4%] sm:bottom-[5%] md:bottom-[6%] left-[8%] sm:left-[10%] md:left-[12%] z-20"
+            >
+              <a
+                href="https://www.instagram.com/kookyih"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="w-10 h-10 sm:w-12 sm:h-12 md:w-13 md:h-13 lg:w-14 lg:h-14 bg-white border border-gray-100 rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.12)] flex items-center justify-center text-[#637C50] hover:bg-[#A1C680] hover:text-white hover:border-[#A1C680] hover:-translate-y-1.5 hover:scale-110 hover:shadow-xl transition-all duration-300 cursor-pointer block"
+              >
+                <i className="fa-brands fa-instagram text-base sm:text-lg md:text-xl"></i>
+              </a>
+            </motion.div>
           </div>
         </motion.div>
 
@@ -114,9 +143,9 @@ export default function Hero() {
       <div className="absolute bottom-3 sm:bottom-4 md:bottom-5 left-0 right-0 w-full overflow-visible pointer-events-none select-none z-10">
         
         {/* Animated Flying Bee Container */}
-        <div className="relative w-full h-16 sm:h-20 mb-2 overflow-visible">
+        <div className="relative w-full h-16 sm:h-20 mb-2 overflow-visible pointer-events-none">
           <motion.div
-            className="absolute left-0 top-1/2 -translate-y-1/2 pointer-events-auto cursor-pointer"
+            className="absolute left-0 top-1/2 -translate-y-1/2 pointer-events-none select-none"
             animate={{
               x: ["-10vw", "105vw"],
             }}
@@ -144,13 +173,11 @@ export default function Hero() {
                   ease: "easeInOut",
                 },
               }}
-              whileHover={{ scale: 1.25, rotate: 15 }}
-              title="Bzzz! 🐝"
             >
               <img
                 src="/bee.png"
                 alt="Cute Bee"
-                className="w-7 sm:w-8 md:w-9 h-auto drop-shadow-xs select-none"
+                className="w-7 sm:w-8 md:w-9 h-auto drop-shadow-xs select-none pointer-events-none"
                 style={{ imageRendering: "pixelated" }}
               />
             </motion.div>
@@ -158,11 +185,11 @@ export default function Hero() {
         </div>
 
         {/* Row of Roses / Mini Garden: 4 sets of alternating (Big + Small), balanced spacing between all flowers */}
-        <div className="w-full max-w-5xl sm:max-w-6xl mx-auto px-4 sm:px-10 md:px-16 lg:px-20 flex justify-between items-end">
+        <div className="w-full max-w-5xl sm:max-w-6xl mx-auto px-4 sm:px-10 md:px-16 lg:px-20 flex justify-between items-end pointer-events-none select-none">
           {flowers.map((f, i) => (
             <motion.div
               key={i}
-              className="flex flex-col items-center pointer-events-auto cursor-pointer group"
+              className="flex flex-col items-center pointer-events-none select-none"
               animate={{
                 rotate: [f.sway, -f.sway, f.sway],
               }}
@@ -172,7 +199,6 @@ export default function Hero() {
                 ease: "easeInOut",
                 delay: (i % 4) * 0.2,
               }}
-              whileHover={{ scale: 1.25, y: -4 }}
             >
               <img
                 src="/rose.png"
@@ -181,7 +207,7 @@ export default function Hero() {
                   f.size === "big"
                     ? "w-7 sm:w-8 md:w-9 mb-0"
                     : "w-4 sm:w-4.5 md:w-5 mb-0.5"
-                } h-auto select-none drop-shadow-2xs`}
+                } h-auto select-none pointer-events-none drop-shadow-2xs`}
                 style={{ imageRendering: "pixelated" }}
               />
             </motion.div>

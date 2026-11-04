@@ -73,23 +73,23 @@ export default function Achievements() {
     <SlideUpComponent>
       <section 
         id="achievements" 
-        className="w-full bg-white py-20 sm:py-24 md:py-28 px-4 sm:px-6 md:px-8 font-poppins scroll-mt-20 overflow-hidden"
+        className="w-full bg-white py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 lg:px-12 font-poppins scroll-mt-20 overflow-hidden"
       >
         <div className="max-w-6xl mx-auto w-full">
           
           {/* Section Header */}
-          <div className="flex flex-col items-center text-center mb-12 sm:mb-14">
+          <div className="flex flex-col items-center text-center mb-8 sm:mb-10 md:mb-12">
             <h2 className="text-3xl sm:text-4xl md:text-[44px] font-bold text-[#637C50] tracking-tight leading-tight">
               My Journey & Milestones
             </h2>
-            <p className="text-gray-600 text-sm sm:text-base max-w-2xl leading-relaxed mt-3 px-2">
+            <p className="text-gray-600 text-sm sm:text-base max-w-2xl leading-relaxed mt-2.5 sm:mt-3 px-2">
               A visual gallery of the competitions I've joined, the challenges I've conquered, and the recognitions I've received along the way. Every picture tells a story of growth and learning.
             </p>
           </div>
 
           {/* Carousel Card Container */}
           <div className="max-w-[1000px] mx-auto w-full">
-            <div className="relative bg-white rounded-none border border-gray-200/90 shadow-[0_8px_32px_rgba(0,0,0,0.04)] p-6 sm:p-9 md:p-11 min-h-[420px] sm:min-h-[440px] md:min-h-[450px] flex items-center">
+            <div className="relative bg-white rounded-none border border-gray-200/90 shadow-[0_8px_32px_rgba(0,0,0,0.04)] p-5 sm:p-8 md:p-11 min-h-[380px] sm:min-h-[420px] md:min-h-[450px] flex items-center">
               <AnimatePresence mode="wait" custom={direction}>
                 <motion.div
                   key={currentIndex}
@@ -141,7 +141,7 @@ export default function Achievements() {
             </div>
 
             {/* Circular Navigation Buttons */}
-            <div className="flex items-center justify-center gap-4 mt-8 sm:mt-10">
+            <div className="flex items-center justify-center gap-4 mt-6 sm:mt-8">
               <button
                 type="button"
                 onClick={handlePrev}

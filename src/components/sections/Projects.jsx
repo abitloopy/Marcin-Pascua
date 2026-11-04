@@ -97,7 +97,7 @@ export default function Projects() {
     <SlideUpComponent>
       <section 
         id="projects" 
-        className="w-full bg-[#fcfcf9] py-16 sm:py-24 md:py-28 px-4 sm:px-6 md:px-8 font-poppins scroll-mt-20 overflow-hidden"
+        className="w-full bg-[#fcfcf9] py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 lg:px-12 font-poppins scroll-mt-20 overflow-hidden"
       >
         <div className="max-w-6xl mx-auto w-full">
           
@@ -112,7 +112,7 @@ export default function Projects() {
           </div>
 
           {/* Category Tabs */}
-          <div className="flex items-center justify-center gap-6 sm:gap-12 md:gap-16 mb-10 sm:mb-14">
+          <div className="flex items-center justify-center gap-6 sm:gap-10 md:gap-16 mb-8 sm:mb-10 md:mb-12">
             {categories.map((category) => {
               const isActive = selectedCategory === category;
               return (

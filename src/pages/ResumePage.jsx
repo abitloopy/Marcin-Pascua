@@ -69,20 +69,20 @@ export default function ResumePage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-28 pb-20 px-4 flex flex-col items-center">
+    <div className="min-h-screen bg-gray-50 pt-28 pb-20 px-4 sm:px-6 md:px-8 flex flex-col items-center">
       
       {/* Action Bar */}
       <div className="w-full max-w-[800px] flex justify-end mb-6">
         <button 
           onClick={handleDownload}
-          className="bg-[#637C50] text-white px-6 py-2.5 rounded-full font-bold hover:bg-[#A1C680] hover:-translate-y-0.5 transition-all duration-300 shadow-md flex items-center gap-2"
+          className="bg-[#637C50] text-white px-6 py-2.5 rounded-full font-bold hover:bg-[#A1C680] hover:-translate-y-0.5 transition-all duration-300 shadow-md flex items-center gap-2 cursor-pointer"
         >
           <i className="fa-solid fa-download"></i> Download PDF
         </button>
       </div>
 
       {/* Resume Container (A4 / Letter aspect ratio) */}
-      <div className="w-full max-w-[794px] bg-white shadow-xl flex flex-col mx-auto overflow-hidden p-8 md:p-12">
+      <div className="w-full max-w-[794px] bg-white shadow-xl flex flex-col mx-auto overflow-hidden p-4 sm:p-8 md:p-12">
         <div ref={resumeRef} className="w-full h-full bg-white text-black text-[12px]" style={{ fontFamily: '"Times New Roman", Times, serif' }}>
           
           {/* HEADER */}
@@ -202,7 +202,7 @@ export default function ResumePage() {
               </div>
               <div className="flex flex-wrap justify-between px-4">
                 <span>• HTML/CSS/JS</span>
-                <span>• C/C#/C++</span>
+                <span>• C/C#</span>
                 <span>• Java</span>
                 <span>• PHP</span>
                 <span>• SQL</span>
@@ -219,7 +219,6 @@ export default function ResumePage() {
                 <span>React.js</span> <span className="text-gray-400">|</span> 
                 <span>Tailwind CSS</span> <span className="text-gray-400">|</span> 
                 <span>Laravel</span> <span className="text-gray-400">|</span>
-                <span>Express</span> <span className="text-gray-400">|</span>
                 <span>Node.js</span>
               </div>
             </section>
@@ -228,12 +227,13 @@ export default function ResumePage() {
             <section>
               <div className="border-t-2 border-b-2 border-black py-0.5 mb-1 flex items-center justify-center gap-2">
                 <i className="fa-solid fa-wrench"></i>
-                <h3 className="font-bold text-[12px] uppercase tracking-wider">Tools</h3>
+                <h3 className="font-bold text-[12px] uppercase tracking-wider">Tools & Databases</h3>
               </div>
               <div className="flex flex-wrap justify-center gap-6">
                 <span>Git & GitHub</span> <span className="text-gray-400">|</span> 
                 <span>Figma</span> <span className="text-gray-400">|</span> 
-                <span>SQL Server</span> <span className="text-gray-400">|</span>
+                <span>MySQL</span> <span className="text-gray-400">|</span> 
+                <span>SSMS</span> <span className="text-gray-400">|</span>
                 <span>Supabase</span>
               </div>
             </section>

@@ -6,24 +6,24 @@ import SlideUpComponent from '../components/animations/SlideUpComponent';
 
 export default function About() {
   return (
-    <div className="min-h-screen pt-20 pb-20 font-poppins">
+    <div className="min-h-screen pt-16 sm:pt-20 pb-16 sm:pb-20 font-poppins">
       {/* Restyled About Me & Experience Section */}
       <AboutMe />
 
       {/* Skills Section */}
-      <div className="w-full max-w-6xl mx-auto px-4 mb-20">
+      <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-8 mb-16 sm:mb-20">
         <Skills />
       </div>
 
       {/* TOPCIT Certificate Section */}
-      <div className="w-full max-w-6xl mx-auto px-4 mb-20">
+      <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-8 mb-16 sm:mb-20">
         <SlideUpComponent>
-          <div className="flex justify-center md:justify-start w-full mb-10 max-w-5xl mx-auto">
+          <div className="flex justify-center md:justify-start w-full mb-8 sm:mb-10 max-w-5xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-950 text-center md:text-left tracking-tight">
               Professional Certification
             </h2>
           </div>
-          <div className="bg-white border border-gray-200 rounded-xl p-8 md:p-10 flex flex-col md:flex-row items-center md:items-start gap-8 shadow-sm max-w-5xl mx-auto">
+          <div className="bg-white border border-gray-200 rounded-xl p-5 sm:p-8 md:p-10 flex flex-col md:flex-row items-center md:items-start gap-6 sm:gap-8 shadow-sm max-w-5xl mx-auto">
 
             {/* Image/Logo */}
             <div className="w-full md:w-1/4 flex justify-center md:justify-start">
