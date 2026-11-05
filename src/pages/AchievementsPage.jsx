@@ -43,8 +43,8 @@ export default function AchievementsPage() {
     <div className="min-h-screen font-poppins">
       
       {/* Beige Top Section */}
-      <div className="w-full bg-[#fcfcf9] pt-28 sm:pt-32 pb-14 sm:pb-16">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+      <div className="w-full bg-[#fcfcf9] pt-32 sm:pt-36 pb-16 sm:pb-20">
+        <div className="max-w-[1200px] mx-auto px-6 sm:px-8 md:px-12">
           
           {/* Intro Heading & Subheading */}
           <div className="flex flex-col items-center text-center mb-16">
@@ -169,7 +169,7 @@ export default function AchievementsPage() {
       </div>
 
       {/* Formal Certificates Section */}
-      <div id="certificates" className="w-full bg-gray-50 py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 border-t border-gray-100">
+      <div id="certificates" className="w-full bg-gray-50 py-20 sm:py-24 md:py-28 px-6 sm:px-8 md:px-12 border-t border-gray-100">
         <div className="max-w-[1200px] mx-auto">
           <div className="text-center mb-10 sm:mb-14">
             <span className="text-[#637C50] font-bold text-sm tracking-widest uppercase mb-4 block">Continuous Learning</span>

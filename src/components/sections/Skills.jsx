@@ -30,7 +30,7 @@ export default function Skills() {
   ];
 
   return (
-    <div id="skills" className="w-full font-poppins px-4 sm:px-6 md:px-8 relative pb-8 sm:pb-10">
+    <div id="skills" className="w-full font-poppins px-6 sm:px-8 md:px-12 relative pb-10 sm:pb-12">
       <div className="flex justify-center md:justify-start w-full mb-8 sm:mb-10 mt-4 sm:mt-6 max-w-5xl mx-auto">
         <h1 className="text-3xl sm:text-4xl font-bold text-[#637C50] text-center md:text-left tracking-wide">
           Skills &amp; Technologies

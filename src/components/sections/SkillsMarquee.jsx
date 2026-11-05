@@ -152,9 +152,9 @@ function SkillCard({ item }) {
 
 export default function SkillsMarquee() {
   return (
-    <div className="w-full mt-12 sm:mt-16 md:mt-20 pt-2 flex flex-col items-center font-poppins">
+    <div className="w-full mt-16 sm:mt-20 md:mt-24 pt-4 flex flex-col items-center font-poppins">
       {/* Section Header */}
-      <div className="flex flex-col items-center text-center mb-6 sm:mb-8 px-4">
+      <div className="flex flex-col items-center text-center mb-8 sm:mb-10 px-6 sm:px-8">
         <h3 className="text-2xl sm:text-3xl font-bold text-gray-950 tracking-tight">
           Skills &amp; Technologies
         </h3>

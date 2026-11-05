@@ -23,8 +23,8 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative w-full bg-[#fcfcf9] rounded-b-[40px] sm:rounded-b-[60px] md:rounded-b-[80px] lg:rounded-b-[100px] overflow-hidden pt-28 sm:pt-32 md:pt-36 lg:pt-40 pb-20 sm:pb-24 md:pb-28 lg:pb-32 px-4 sm:px-6 md:px-8 lg:px-12 font-poppins scroll-mt-20">
-      <div className="w-full max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10 sm:gap-12 md:gap-16 lg:gap-20">
+    <section id="home" className="relative w-full bg-[#fcfcf9] rounded-b-[40px] sm:rounded-b-[60px] md:rounded-b-[80px] lg:rounded-b-[100px] overflow-hidden pt-32 sm:pt-36 md:pt-40 lg:pt-44 pb-24 sm:pb-28 md:pb-32 lg:pb-36 px-6 sm:px-8 md:px-12 lg:px-16 font-poppins scroll-mt-20">
+      <div className="w-full max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 sm:gap-14 md:gap-16 lg:gap-20">
         
         {/* Left Column: Heading, Subtitle & Button */}
         <motion.div 

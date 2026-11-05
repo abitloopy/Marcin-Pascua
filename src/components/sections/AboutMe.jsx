@@ -5,8 +5,8 @@ import SkillsMarquee from "./SkillsMarquee";
 export default function AboutMe() {
   return (
     <SlideUpComponent>
-      <section id="about" className="w-full bg-white py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 lg:px-12 font-poppins scroll-mt-20 overflow-hidden">
-        <div id="about-intro" className="w-full max-w-5xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-10 md:gap-12 lg:gap-16">
+      <section id="about" className="w-full bg-white py-20 sm:py-24 md:py-28 px-6 sm:px-8 md:px-12 lg:px-16 font-poppins scroll-mt-20 overflow-hidden">
+        <div id="about-intro" className="w-full max-w-5xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-12 sm:gap-14 md:gap-16">
           
           {/* Left Column: ID Lace Card */}
           <div className="flex-1 flex justify-center items-center w-full py-4 md:py-6">

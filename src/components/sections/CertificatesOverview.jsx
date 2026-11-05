@@ -103,8 +103,8 @@ export default function CertificatesOverview() {
   };
 
   return (
-    <div id="certificates" className="pt-0 pb-16 sm:pb-20 md:pb-24 px-4 sm:px-6 md:px-8 lg:px-12 w-full overflow-hidden bg-white flex flex-col items-center justify-center font-poppins relative">
-      <div className="flex flex-col items-center text-center mb-8 sm:mb-10 md:mb-12 max-w-6xl mx-auto w-full">
+    <div id="certificates" className="pt-0 pb-20 sm:pb-24 md:pb-28 px-6 sm:px-8 md:px-12 lg:px-16 w-full overflow-hidden bg-white flex flex-col items-center justify-center font-poppins relative">
+      <div className="flex flex-col items-center text-center mb-10 sm:mb-12 md:mb-14 max-w-6xl mx-auto w-full">
         <h2 className="text-3xl sm:text-4xl md:text-[44px] font-bold text-[#637C50] tracking-tight leading-tight">
           My Certifications
         </h2>
@@ -114,8 +114,8 @@ export default function CertificatesOverview() {
       </div>
 
       {/* Mobile: Single Card Carousel matching Achievement Section (No Sneak Peek & No Rounded Corners) (< md) */}
-      <div className="md:hidden w-full max-w-[360px] sm:max-w-[420px] mx-auto">
-        <div className="relative w-full h-[230px] sm:h-[260px] flex items-center justify-center overflow-hidden">
+      <div className="md:hidden w-full max-w-[380px] sm:max-w-[440px] mx-auto">
+        <div className="relative w-full h-[240px] sm:h-[280px] flex items-center justify-center overflow-hidden">
           <AnimatePresence mode="wait" custom={mobileDirection}>
             {(() => {
               const currentCert = certificates[mobileIndex];
@@ -168,7 +168,7 @@ export default function CertificatesOverview() {
         </div>
 
         {/* Mobile Arrow Navigation */}
-        <div className="flex items-center justify-center gap-4 mt-6 sm:mt-8">
+        <div className="flex items-center justify-center gap-4 mt-8 sm:mt-10">
           <button 
             type="button"
             onClick={handleMobilePrev}

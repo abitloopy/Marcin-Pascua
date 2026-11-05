@@ -25,7 +25,7 @@ export default function ProjCard({
       </div>
 
       {/* Card Body */}
-      <div className="p-5 sm:p-6 flex flex-col flex-1">
+      <div className="p-6 sm:p-7 flex flex-col flex-1">
         {/* Title & Small Action Button Row */}
         <div className="flex items-center justify-between gap-3 mb-1 min-h-[32px]">
           <h3 className="text-xl font-bold text-gray-950 tracking-tight leading-snug truncate">

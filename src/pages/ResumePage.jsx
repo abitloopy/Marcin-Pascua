@@ -69,7 +69,7 @@ export default function ResumePage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-28 pb-20 px-4 sm:px-6 md:px-8 flex flex-col items-center">
+    <div className="min-h-screen bg-gray-50 pt-32 sm:pt-36 pb-20 sm:pb-24 px-6 sm:px-8 md:px-12 flex flex-col items-center">
       
       {/* Action Bar */}
       <div className="w-full max-w-[800px] flex justify-end mb-6">
@@ -82,7 +82,7 @@ export default function ResumePage() {
       </div>
 
       {/* Resume Container (A4 / Letter aspect ratio) */}
-      <div className="w-full max-w-[794px] bg-white shadow-xl flex flex-col mx-auto overflow-hidden p-4 sm:p-8 md:p-12">
+      <div className="w-full max-w-[794px] bg-white shadow-xl flex flex-col mx-auto overflow-hidden p-6 sm:p-8 md:p-12">
         <div ref={resumeRef} className="w-full h-full bg-white text-black text-[12px]" style={{ fontFamily: '"Times New Roman", Times, serif' }}>
           
           {/* HEADER */}

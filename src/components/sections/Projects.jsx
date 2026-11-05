@@ -97,12 +97,12 @@ export default function Projects() {
     <SlideUpComponent>
       <section 
         id="projects" 
-        className="w-full bg-[#fcfcf9] py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 lg:px-12 font-poppins scroll-mt-20 overflow-hidden"
+        className="w-full bg-[#fcfcf9] py-20 sm:py-24 md:py-28 px-6 sm:px-8 md:px-12 lg:px-16 font-poppins scroll-mt-20 overflow-hidden"
       >
         <div className="max-w-6xl mx-auto w-full">
           
           {/* Header */}
-          <div className="flex flex-col items-center text-center mb-8 sm:mb-10 md:mb-12">
+          <div className="flex flex-col items-center text-center mb-10 sm:mb-12 md:mb-14">
             <h2 className="text-3xl sm:text-4xl md:text-[44px] font-bold text-[#637C50] tracking-tight leading-tight">
               My Featured Projects
             </h2>
@@ -112,7 +112,7 @@ export default function Projects() {
           </div>
 
           {/* Category Tabs */}
-          <div className="flex items-center justify-center gap-6 sm:gap-10 md:gap-16 mb-8 sm:mb-10 md:mb-12">
+          <div className="flex items-center justify-center gap-6 sm:gap-10 md:gap-16 mb-10 sm:mb-12 md:mb-14">
             {categories.map((category) => {
               const isActive = selectedCategory === category;
               return (
@@ -163,7 +163,7 @@ export default function Projects() {
             </div>
 
             {/* Mobile Carousel Round Arrow Buttons (<) (>) */}
-            <div className="flex items-center justify-center gap-4 mt-6">
+            <div className="flex items-center justify-center gap-4 mt-8 sm:mt-10">
               <button
                 type="button"
                 onClick={scrollPrev}

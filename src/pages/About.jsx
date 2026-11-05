@@ -11,12 +11,12 @@ export default function About() {
       <AboutMe />
 
       {/* Skills Section */}
-      <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-8 mb-16 sm:mb-20">
+      <div className="w-full max-w-6xl mx-auto px-6 sm:px-8 md:px-12 mb-16 sm:mb-20">
         <Skills />
       </div>
 
       {/* TOPCIT Certificate Section */}
-      <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-8 mb-16 sm:mb-20">
+      <div className="w-full max-w-6xl mx-auto px-6 sm:px-8 md:px-12 mb-16 sm:mb-20">
         <SlideUpComponent>
           <div className="flex justify-center md:justify-start w-full mb-8 sm:mb-10 max-w-5xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-950 text-center md:text-left tracking-tight">
