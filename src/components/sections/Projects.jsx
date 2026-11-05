@@ -142,7 +142,7 @@ export default function Projects() {
           <div className="md:hidden w-full">
             <div 
               ref={carouselRef}
-              className="flex gap-4 overflow-x-auto snap-x snap-mandatory py-4 px-4 -mx-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] scroll-smooth"
+              className="flex gap-4 overflow-x-auto snap-x snap-mandatory py-4 -mr-6 sm:-mr-8 pr-6 sm:pr-8 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] scroll-smooth"
             >
               {filteredProjects.map((project) => (
                 <div
