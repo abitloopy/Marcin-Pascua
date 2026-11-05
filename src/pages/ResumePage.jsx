@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import html2pdf from 'html2pdf.js';
 import { achievementsData } from '../data/achievements';
 
 const projectsData = [
@@ -55,9 +56,7 @@ const projectsData = [
 export default function ResumePage() {
   const resumeRef = useRef();
 
-  const handleDownload = async () => {
-    const html2pdfModule = await import('html2pdf.js');
-    const html2pdf = html2pdfModule.default || html2pdfModule;
+  const handleDownload = () => {
     const element = resumeRef.current;
     const opt = {
       margin:       0.5,

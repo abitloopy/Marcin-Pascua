@@ -20,8 +20,6 @@ export default function ProjCard({
         <img 
           src={image} 
           alt={title} 
-          loading="lazy"
-          decoding="async"
           className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" 
         />
       </div>

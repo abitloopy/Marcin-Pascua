@@ -1,7 +1,7 @@
 export const achievementsData = [
   {
     logo: "/10th-ict.png",
-    image: "/10th-gen-info.webp",
+    image: "/10th-gen-info.jpg",
     title: "10th ICT Congress: General Information Quiz Bowl",
     award: "2nd Place",
     year: "2023-2024",
@@ -9,7 +9,7 @@ export const achievementsData = [
   },
   {
     logo: "/ccs.png",
-    image: "/ccs-gen-info.webp",
+    image: "/ccs-gen-info.jpg",
     title: "UCLM CCS Days: General Information Quiz Bowl",
     award: "1st Place",
     year: "2024-2025",
@@ -17,7 +17,7 @@ export const achievementsData = [
   },
   {
     logo: "/11th-ict.png",
-    image: "/11th-gen-info.webp",
+    image: "/11th-gen-info.jpg",
     title: "11th ICT Congress: General Information Quiz Bowl",
     award: "2nd Place",
     year: "2024-2025",
@@ -25,7 +25,7 @@ export const achievementsData = [
   },
   {
     logo: "/ccs.png",
-    image: "/ccs-ui-ux.webp",
+    image: "/ccs-ui-ux.jpg",
     title: "UCLM CCS Days: UI/UX Competition",
     award: "2nd Place",
     year: "2025-2026",
@@ -33,7 +33,7 @@ export const achievementsData = [
   },
   {
     logo: "/ccs.png",
-    image: "/12th-lightning-pitch.webp",
+    image: "/12th-lightning-pitch.jpg",
     title: "12th ICT Congress: Lightning Pitch",
     award: "3rd Place",
     year: "2025-2026",
@@ -41,7 +41,7 @@ export const achievementsData = [
   },
   {
     logo: "/ccs.png",
-    image: "/psite.webp",
+    image: "/psite.jpg",
     title: "PSITE Region 7 ICT Congress: Pitching Competition",
     award: "3rd Place",
     year: "2026-2027",

@@ -64,10 +64,8 @@ export default function Hero() {
           <div className="relative flex justify-center items-center w-fit mx-auto">
             {/* Marcin's Picture */}
             <img
-              src="/marcin-pic.webp"
+              src="/marcin-pic.png"
               alt="Marcin"
-              fetchPriority="high"
-              decoding="async"
               className="w-[280px] sm:w-[340px] md:w-[380px] lg:w-[420px] max-w-full h-auto object-contain select-none pointer-events-none drop-shadow-sm"
             />
 
